@@ -18,18 +18,7 @@ def scan_ports(target, start_port, end_port):
 
             sock.close()
 
-        except KeyboardInterrupt:
-            print("\nScan stopped by user.")
-            break
-
-        except socket.gaierror:
-            print("Hostname could not be resolved.")
-            break
-
-        except socket.error:
-            print("Could not connect to server.")
-            break
-
+       
 
 # Input
 target = input("Enter target IP or domain (e.g., 127.0.0.1): ")
