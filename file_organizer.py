@@ -1,4 +1,14 @@
+# Day 6: File Organizer
 
+import os
+import shutil
+
+def organize_files(directory):
+    print(f"\nOrganizing files in: {directory}")
+
+    if not os.path.exists(directory):
+        print("Directory not found!")
+        return
 
     for file in os.listdir(directory):
         file_path = os.path.join(directory, file)
