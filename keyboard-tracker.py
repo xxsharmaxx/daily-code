@@ -10,3 +10,7 @@ def on_release(key):
         print("\nExiting program...")
         return False
         
+print("Press keys (Press ESC to stop)\n")
+
+with keyboard.Listener(on_press=on_press, on_release=on_release) as listener:
+    listener.join()
