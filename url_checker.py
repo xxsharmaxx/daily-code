@@ -13,3 +13,13 @@ def check_url_status(url):
         print(f"{url} is DOWN ❌")
 
 
+# Input
+urls = [
+    "https://google.com",
+    "https://github.com",
+    "https://example.com"
+]
+
+for url in urls:
+    check_url_status(url)
+
