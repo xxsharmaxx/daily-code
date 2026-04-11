@@ -43,7 +43,7 @@ daily-code/
 - Python 🐍  
 - Data Structures & Algorithms  
 - MySQL  
-- Java  
+- Java   in
 - HTML, CSS, JavaScript  
 
 ---
