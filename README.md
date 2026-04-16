@@ -28,6 +28,8 @@ daily-code/
 |__ json_to_csv/
 |__ brute_force_login_tester/
 |__file_organizer/
+|__image_scanner/
+
 
 ---
 
