@@ -29,18 +29,14 @@ daily-code/
 |__ brute_force_login_tester/
 |__file_organizer/
 |__image_scanner/
-
+|__file_renamer/
+|__file_search/
+|__merge_sort/
 
 ---
 
 ## 📊 Daily Progress
-
-| Day | Topic | Description |
-|-----|------|------------|
-| Day 1 | Python | Append vs Extend |
-| Day 2 | Python | Even Number Finder |
-| Day 3 | DSA | Two Sum Problem |
-| Day 4 | Python Project | Password Strength Checker |
+Upload every-day python-code and here you can get the source code form my folder/file .
 
 ---
 
