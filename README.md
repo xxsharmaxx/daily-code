@@ -32,7 +32,7 @@ daily-code/
 |__file_renamer/
 |__file_search/
 |__merge_sort/
-
+|__log-analyzer
 ---
 
 ## 📊 Daily Progress
