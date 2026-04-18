@@ -32,7 +32,8 @@ daily-code/
 |__file_renamer/
 |__file_search/
 |__merge_sort/
-|__log-analyzer
+|__log-analyzer/
+|__todo/
 ---
 
 ## 📊 Daily Progress
