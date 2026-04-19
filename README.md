@@ -35,6 +35,7 @@ daily-code/
 |__log-analyzer/
 |__todo/
 |__
+|__
 ---
 
 ## 📊 Daily Progress
