@@ -35,6 +35,7 @@ daily-code/
 |__log-analyzer/
 |__todo/
 |__json to csv/
+|__weather.py/
 |__
 -----
 
