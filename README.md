@@ -36,7 +36,9 @@ daily-code/
 |__todo/
 |__json to csv/
 |__weather.py/
-|__
+|__password_manager/
+|__primenumber/
+|__url_checker/
 -----
 
 ## 📊 Daily Progress
