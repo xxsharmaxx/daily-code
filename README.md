@@ -39,6 +39,8 @@ daily-code/
 |__password_manager/
 |__primenumber/
 |__url_checker/
+|__packetsniffer/
+|__mergesort/
 -----
 
 ## 📊 Daily Progress
