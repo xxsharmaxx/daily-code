@@ -41,6 +41,10 @@ daily-code/
 |__url_checker/
 |__packetsniffer/
 |__mergesort/
+|__file_encryption/
+|__passward_generator/
+|__port_scanner/
+|__
 -----
 
 ## 📊 Daily Progress
