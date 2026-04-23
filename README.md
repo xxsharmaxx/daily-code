@@ -45,6 +45,8 @@ daily-code/
 |__passward_generator/
 |__port_scanner/
 |__keyward_tracker
+|__subdomain_enuminator/
+|__URL_shortner/
 -----
 
 ## 📊 Daily Progress
