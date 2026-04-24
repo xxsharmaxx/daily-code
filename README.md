@@ -47,6 +47,8 @@ daily-code/
 |__keyward_tracker
 |__subdomain_enuminator/
 |__URL_shortner/
+|__csv_analyzer/
+
 -----
 
 ## 📊 Daily Progress
