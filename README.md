@@ -18,36 +18,36 @@ The goal is to stay consistent, improve problem-solving skills, and prepare for 
 
 ---
 
-## 📂 Repository Structure
-daily-code/
-│── day1-python-append-vs-extend/
-│── day2-basic-python/
-│── day3-two-sum/
-│── day4-password-checker/
-│── packetsniffer/
-|__ json_to_csv/
-|__ brute_force_login_tester/
-|__file_organizer/
-|__image_scanner/
-|__file_renamer/
-|__file_search/
-|__merge_sort/
-|__log-analyzer/
-|__todo/
-|__json to csv/
-|__weather.py/
-|__password_manager/
-|__primenumber/
-|__url_checker/
-|__packetsniffer/
-|__mergesort/
-|__file_encryption/
-|__passward_generator/
-|__port_scanner/
-|__keyward_tracker
-|__subdomain_enuminator/
-|__URL_shortner/
-|__csv_analyzer/
+| Day | Project | Description |
+|-----|--------|------------|
+│── day1-python-append-vs-extend|
+│── day2-basic-python|
+│── day3-two-sum|
+│── day4-password-checker|
+│── packetsniffer|
+|__ json_to_csv|
+|__ brute_force_login_tester|
+|__file_organizer|
+|__image_scanner|
+|__file_renamer|
+|__file_search|
+|__merge_sort|
+|__log-analyzer|
+|__todo|
+|__json to csv|
+|__weather.py|
+|__password_manager|
+|__primenumber|
+|__url_checker|
+|__packetsniffer|
+|__mergesort|
+|__file_encryption|
+|__passward_generator|
+|__port_scanner|
+|__keyward_tracker|
+|__subdomain_enuminator|
+|__URL_shortner|
+|__csv_analyzer|
 |__
 
 -----
