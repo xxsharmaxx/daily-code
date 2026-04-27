@@ -48,6 +48,7 @@ The goal is to stay consistent, improve problem-solving skills, and prepare for 
 |__subdomain_enuminator|
 |__URL_shortner|
 |__csv_analyzer|
+|__QR_generator|
 |__
 
 -----
