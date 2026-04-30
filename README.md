@@ -14,7 +14,8 @@ The goal is to stay consistent, improve problem-solving skills, and prepare for 
 - Strengthen Data Structures & Algorithms 🧠  
 - Build real-world projects 💻  
 - Improve problem-solving speed ⚡  
-- Maintain consistency on GitHub 📈  
+- Maintain consistency on GitHub 📈
+- 
 
 ---
 
