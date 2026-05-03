@@ -52,6 +52,7 @@ The goal is to stay consistent, improve problem-solving skills, and prepare for 
 |__QR_generator|
 |__link-expiry.js|
 |__secure-download|
+|__rate-limiter|
 
 -----
 
