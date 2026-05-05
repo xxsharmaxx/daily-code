@@ -54,6 +54,7 @@ The goal is to stay consistent, improve problem-solving skills, and prepare for 
 |__secure-download|
 |__rate-limiter|
 |__lru-cache|
+|__Terminal-Based Password Manager|
 
 -----
 
