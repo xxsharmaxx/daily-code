@@ -15,7 +15,7 @@ The goal is to stay consistent, improve problem-solving skills, and prepare for 
 - Build real-world projects 💻  
 - Improve problem-solving speed ⚡  
 - Maintain consistency on GitHub 📈
-- 
+- Dont miss a day off
 
 ---
 
