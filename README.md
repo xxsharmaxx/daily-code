@@ -58,7 +58,7 @@ The goal is to stay consistent, improve problem-solving skills, and prepare for 
 |__Real-Time Log Analyzer|
 |__multithreaded-port-scanner|
 |__website-monitor.py|
-|__|
+|__Multi-Client Chat|
 
 -----
 
