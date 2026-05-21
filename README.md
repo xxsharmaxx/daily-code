@@ -60,6 +60,8 @@ The goal is to stay consistent, improve problem-solving skills, and prepare for 
 |__website-monitor.py|
 |__Multi-Client Chat|
 |__AI Simulation love|
+|__mini-redis|
+|__|
 
 -----
 
