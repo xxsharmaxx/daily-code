@@ -61,7 +61,7 @@ The goal is to stay consistent, improve problem-solving skills, and prepare for 
 |__Multi-Client Chat|
 |__AI Simulation love|
 |__mini-redis|
-|__|
+|__system-monitoring|
 
 -----
 
