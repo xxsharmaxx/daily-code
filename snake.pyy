@@ -1,0 +1,205 @@
+import tkinter as tk
+import random
+
+# ─── Config ───────────────────────────────────────────────
+ROWS        = 20
+COLS        = 20
+CELL        = 28
+WIDTH       = COLS * CELL
+HEIGHT      = ROWS * CELL
+SPEED       = 120          # ms between frames (lower = faster)
+
+BG_COLOR    = "#0d0d0d"
+GRID_COLOR  = "#1a1a1a"
+SNAKE_HEAD  = "#00ff88"
+SNAKE_BODY  = "#00cc66"
+FOOD_COLOR  = "#ff4466"
+TEXT_COLOR  = "#ffffff"
+SCORE_COLOR = "#00ff88"
+
+
+# ─── Game ─────────────────────────────────────────────────
+class SnakeGame:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("🐍 Day 38 — Snake Game")
+        self.root.resizable(False, False)
+        self.root.configure(bg=BG_COLOR)
+
+        # Score label
+        self.score_var = tk.StringVar(value="SCORE  0")
+        self.hi_var    = tk.StringVar(value="BEST  0")
+        self.high_score = 0
+
+        top = tk.Frame(root, bg=BG_COLOR, pady=8)
+        top.pack()
+        tk.Label(top, textvariable=self.score_var, font=("Courier", 14, "bold"),
+                 fg=SCORE_COLOR, bg=BG_COLOR).pack(side="left", padx=20)
+        tk.Label(top, text="🐍 SNAKE", font=("Courier", 16, "bold"),
+                 fg=TEXT_COLOR, bg=BG_COLOR).pack(side="left", padx=30)
+        tk.Label(top, textvariable=self.hi_var, font=("Courier", 14, "bold"),
+                 fg="#aaaaaa", bg=BG_COLOR).pack(side="left", padx=20)
+
+        # Canvas
+        self.canvas = tk.Canvas(root, width=WIDTH, height=HEIGHT,
+                                bg=BG_COLOR, highlightthickness=2,
+                                highlightbackground=SNAKE_HEAD)
+        self.canvas.pack(padx=12, pady=(0, 12))
+
+        # Controls hint
+        tk.Label(root, text="Arrow keys / WASD to move   |   R to restart   |   P to pause",
+                 font=("Courier", 9), fg="#555555", bg=BG_COLOR).pack(pady=(0, 8))
+
+        # Key bindings
+        for key in ("<Up>","<Down>","<Left>","<Right>",
+                    "w","a","s","d","W","A","S","D"):
+            root.bind(key, self.on_key)
+        root.bind("<r>", lambda e: self.new_game())
+        root.bind("<R>", lambda e: self.new_game())
+        root.bind("<p>", self.toggle_pause)
+        root.bind("<P>", self.toggle_pause)
+
+        self.new_game()
+
+    # ── Init / Reset ──────────────────────────────────────
+    def new_game(self):
+        mid = (ROWS // 2, COLS // 2)
+        self.snake  = [mid, (mid[0], mid[1]-1), (mid[0], mid[1]-2)]
+        self.dir    = (0, 1)          # (row, col) delta
+        self.next_d = (0, 1)
+        self.score  = 0
+        self.paused = False
+        self.alive  = True
+        self.place_food()
+        self.score_var.set(f"SCORE  {self.score}")
+        if hasattr(self, "_job"):
+            self.root.after_cancel(self._job)
+        self.tick()
+
+    # ── Food ──────────────────────────────────────────────
+    def place_food(self):
+        empty = [(r, c) for r in range(ROWS) for c in range(COLS)
+                 if (r, c) not in self.snake]
+        self.food = random.choice(empty)
+
+    # ── Main loop ─────────────────────────────────────────
+    def tick(self):
+        if not self.alive or self.paused:
+            return
+        self.dir = self.next_d
+        head     = (self.snake[0][0] + self.dir[0],
+                    self.snake[0][1] + self.dir[1])
+
+        # Wall collision
+        if not (0 <= head[0] < ROWS and 0 <= head[1] < COLS):
+            self.game_over(); return
+        # Self collision
+        if head in self.snake:
+            self.game_over(); return
+
+        self.snake.insert(0, head)
+
+        if head == self.food:
+            self.score += 10
+            if self.score > self.high_score:
+                self.high_score = self.score
+                self.hi_var.set(f"BEST  {self.high_score}")
+            self.score_var.set(f"SCORE  {self.score}")
+            self.place_food()
+            # Speed up slightly every 50 pts
+            self._speed = max(60, SPEED - (self.score // 50) * 8)
+        else:
+            self.snake.pop()
+
+        self.draw()
+        self._job = self.root.after(getattr(self, "_speed", SPEED), self.tick)
+
+    # ── Draw ──────────────────────────────────────────────
+    def draw(self):
+        c = self.canvas
+        c.delete("all")
+
+        # Grid lines
+        for r in range(ROWS + 1):
+            y = r * CELL
+            c.create_line(0, y, WIDTH, y, fill=GRID_COLOR)
+        for col in range(COLS + 1):
+            x = col * CELL
+            c.create_line(x, 0, x, HEIGHT, fill=GRID_COLOR)
+
+        # Food (pulsing circle illusion via two circles)
+        fr, fc = self.food
+        fx, fy = fc * CELL, fr * CELL
+        c.create_oval(fx+3, fy+3, fx+CELL-3, fy+CELL-3,
+                      fill=FOOD_COLOR, outline="#ff7799", width=2)
+
+        # Snake
+        for i, (r, col) in enumerate(self.snake):
+            x, y = col * CELL, r * CELL
+            color = SNAKE_HEAD if i == 0 else SNAKE_BODY
+            pad   = 2 if i == 0 else 3
+            c.create_rectangle(x+pad, y+pad, x+CELL-pad, y+CELL-pad,
+                                fill=color, outline="", width=0)
+            # Eyes on head
+            if i == 0:
+                dr, dc = self.dir
+                ex1 = x + CELL//2 - 5*dc + 4*(1-abs(dc))
+                ey1 = y + CELL//2 - 5*dr + 4*(1-abs(dr))
+                ex2 = x + CELL//2 - 5*dc - 4*(1-abs(dc))
+                ey2 = y + CELL//2 - 5*dr - 4*(1-abs(dr))
+                for ex, ey in [(ex1,ey1),(ex2,ey2)]:
+                    c.create_oval(ex-2,ey-2,ex+2,ey+2, fill="#000000", outline="")
+
+    # ── Game Over overlay ─────────────────────────────────
+    def game_over(self):
+        self.alive = False
+        c = self.canvas
+        c.create_rectangle(WIDTH//2-140, HEIGHT//2-60,
+                            WIDTH//2+140, HEIGHT//2+60,
+                            fill="#000000", outline=FOOD_COLOR, width=2)
+        c.create_text(WIDTH//2, HEIGHT//2-28, text="GAME OVER",
+                      font=("Courier", 22, "bold"), fill=FOOD_COLOR)
+        c.create_text(WIDTH//2, HEIGHT//2+4,
+                      text=f"Score: {self.score}",
+                      font=("Courier", 14), fill=TEXT_COLOR)
+        c.create_text(WIDTH//2, HEIGHT//2+30,
+                      text="Press R to restart",
+                      font=("Courier", 11), fill="#888888")
+
+    # ── Pause ─────────────────────────────────────────────
+    def toggle_pause(self, event=None):
+        if not self.alive: return
+        self.paused = not self.paused
+        if self.paused:
+            self.canvas.create_rectangle(WIDTH//2-80, HEIGHT//2-30,
+                                          WIDTH//2+80, HEIGHT//2+30,
+                                          fill="#000000", outline=SCORE_COLOR, width=2,
+                                          tags="pause_box")
+            self.canvas.create_text(WIDTH//2, HEIGHT//2, text="⏸  PAUSED",
+                                     font=("Courier", 16, "bold"),
+                                     fill=SCORE_COLOR, tags="pause_box")
+        else:
+            self.canvas.delete("pause_box")
+            self.tick()
+
+    # ── Direction input ───────────────────────────────────
+    def on_key(self, event):
+        mapping = {
+            "Up": (-1,0), "w": (-1,0), "W": (-1,0),
+            "Down": (1,0), "s": (1,0), "S": (1,0),
+            "Left": (0,-1), "a": (0,-1), "A": (0,-1),
+            "Right": (0,1), "d": (0,1), "D": (0,1),
+        }
+        k = event.keysym
+        if k in mapping:
+            nd = mapping[k]
+            # Prevent reversing
+            if (nd[0] + self.dir[0], nd[1] + self.dir[1]) != (0, 0):
+                self.next_d = nd
+
+
+# ─── Entry point ──────────────────────────────────────────
+if __name__ == "__main__":
+    root = tk.Tk()
+    app  = SnakeGame(root)
+    root.mainloop()
