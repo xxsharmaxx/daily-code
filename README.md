@@ -62,7 +62,7 @@ The goal is to stay consistent, improve problem-solving skills, and prepare for 
 |__AI Simulation love|
 |__mini-redis|
 |__system-monitoring|
-|__|
+|__Snake gui tkinkter|
 
 -----
 
