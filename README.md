@@ -63,6 +63,7 @@ The goal is to stay consistent, improve problem-solving skills, and prepare for 
 |__mini-redis|
 |__system-monitoring|
 |__Snake gui tkinkter|
+|__smart-url-shortener-python|
 -----
 
 ## 📊 Daily Progress
