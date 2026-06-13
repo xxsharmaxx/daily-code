@@ -65,7 +65,7 @@ The goal is to stay consistent, improve problem-solving skills, and prepare for 
 |__Snake gui tkinkter|
 |__smart-url-shortener-python|
 |__File Integrity Checker|
-|__|
+|__Duplicate File Finder|
 -----
 
 ## 📊 Daily Progress
