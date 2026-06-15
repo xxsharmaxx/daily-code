@@ -66,6 +66,7 @@ The goal is to stay consistent, improve problem-solving skills, and prepare for 
 |__smart-url-shortener-python|
 |__File Integrity Checker|
 |__Duplicate File Finder|
+|__Clipboard History Manager|
 -----
 
 ## 📊 Daily Progress
