@@ -67,6 +67,7 @@ The goal is to stay consistent, improve problem-solving skills, and prepare for 
 |__File Integrity Checker|
 |__Duplicate File Finder|
 |__Clipboard History Manager|
+|__Mini-git-python|
 -----
 
 ## 📊 Daily Progress
