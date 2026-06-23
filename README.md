@@ -68,7 +68,8 @@ The goal is to stay consistent, improve problem-solving skills, and prepare for 
 |__Duplicate File Finder|
 |__Clipboard History Manager|
 |__Mini-git-python|
-|__Ai-code-reviewer
+|__Ai-code-reviewer|
+|__URL HEALTH CHECKER|
 -----
 
 ## 📊 Daily Progress
