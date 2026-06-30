@@ -71,7 +71,6 @@ The goal is to stay consistent, improve problem-solving skills, and prepare for 
 |__Ai-code-reviewer|
 |__URL HEALTH CHECKER|
 |__|
-|__|
 -----
 
 ## 📊 Daily Progress
