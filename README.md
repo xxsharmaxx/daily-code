@@ -75,6 +75,7 @@ The goal is to stay consistent, improve problem-solving skills, and prepare for 
 |__website-moniroting|
 |__broken_link_checker|
 |__json_diff_checker|
+|__log_rotation_manager.py|
 
 -----
 
