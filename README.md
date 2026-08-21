@@ -6,6 +6,7 @@
 ## 📌 About
 This repository tracks my **daily coding journey** where I practice programming, DSA, and build mini projects.  
 The goal is to stay consistent, improve problem-solving skills, and prepare for technical interviews.
+All the necessary file are there .
 
 ---
 
