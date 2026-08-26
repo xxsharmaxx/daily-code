@@ -81,6 +81,7 @@ All the necessary file are there .
 |__system resource monitor|
 |__api_response_analyzer|
 |rate_limiter_demo.py|
+|code_snappet_manager.py|
 
 -----
 
