@@ -20,6 +20,7 @@ All the necessary file are there .
 
 ---
 
+
 | Day | Project | Description |
 |-----|--------|------------|
 │── day1-python-append-vs-extend|
